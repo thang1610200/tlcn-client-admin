@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    images: {
+        domains: [
+            'tlcn-upload.s3.ap-southeast-1.amazonaws.com',
+            'ui-avatars.com'
+        ],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**',
+                port: '',
+                pathname: '**',
+            },
+        ],
+    }
+}
 
 module.exports = nextConfig
