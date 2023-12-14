@@ -66,6 +66,7 @@ export const authOptions: NextAuthOptions = {
                 return token;
             }
             return await refreshToken(token);
+            //throw Error("expired token");
         },
 
         async session({ token, session }) {

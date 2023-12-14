@@ -17,8 +17,8 @@ const routes = [
     },
     {
         icon: BarChart,
-        label: 'Biểu đồ',
-        href: '/analytic',
+        label: 'Đăng ký Instructor',
+        href: '/certificate',
     },
 ];
 

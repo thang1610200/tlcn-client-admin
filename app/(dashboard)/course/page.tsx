@@ -14,10 +14,6 @@ const CoursesPage = () => {
         return <LoadingModal />;
     }
 
-    if (error) {
-        return <div>Internal Server</div>;
-    }
-
     return (
         <div className="p-6">
             <DataTable data={course} columns={columns} />

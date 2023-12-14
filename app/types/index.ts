@@ -1,3 +1,9 @@
+export enum StatusRegisterInstructor {
+    Progressing = 'PROGRESSING',
+    Reject = 'REJECT',
+    Success = 'SUCCESS',
+  }
+
 export interface User {
     name: string,
     email: string,
@@ -32,5 +38,15 @@ export interface UserProgress {
     courseId: string;
     isCompleted: boolean;
     isPassed: boolean;
+    createdAt: Date;
+}
+
+export interface RegisterInstructor {
+    token: string;
+    userId: string;
+    user: User;
+    file: string;
+    status: StatusRegisterInstructor;
+    reply: string;
     createdAt: Date;
 }

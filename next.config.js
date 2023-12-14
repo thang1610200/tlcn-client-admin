@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: [
-            'tlcn-upload.s3.ap-southeast-1.amazonaws.com',
-            'ui-avatars.com'
-        ],
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: '**',
-                port: '',
+                hostname: 'ui-avatars.com',
                 pathname: '**',
             },
-        ],
+            {
+                protocol: 'https',
+                hostname: 'tlcn-upload.s3.ap-southeast-1.amazonaws.com',
+                pathname: '**',
+            }
+        ]
     }
 }
 
