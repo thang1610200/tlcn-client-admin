@@ -5,21 +5,27 @@ import { DataTable } from './components/data-table';
 import { columns } from './components/columns';
 import { useAllUser } from '@/app/hook/useAllUser';
 import LoadingModal from '@/components/modal/loading-modal';
+import { useRouter } from 'next/navigation';
 
 const UserPage = () => {
     const session = useSession();
+    const router = useRouter();
     const {
         data: user = [],
         isLoading,
         error,
     } = useAllUser(session.data?.backendTokens.accessToken);
 
-    if (isLoading) {
+    if (isLoading || session.status === 'loading') {
         return <LoadingModal />;
     }
 
     if (error) {
         return <div>Internal Server</div>;
+    }
+
+    if(session.status === 'unauthenticated') {
+        return router.push("/");
     }
 
     return (

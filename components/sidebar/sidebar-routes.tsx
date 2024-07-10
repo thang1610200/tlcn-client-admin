@@ -14,12 +14,7 @@ const routes = [
         icon: User,
         label: 'Người dùng',
         href: '/user'
-    },
-    {
-        icon: BarChart,
-        label: 'Đăng ký Instructor',
-        href: '/certificate',
-    },
+    }
 ];
 
 export const SidebarRoutes = () => {

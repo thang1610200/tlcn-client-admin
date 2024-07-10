@@ -70,9 +70,9 @@ export function DataTable<TData, TValue>({
                     }
                     className="max-w-sm"
                 />
-                <div>
+                {/* <div>
                     <CreateUserModal />
-                </div>
+                </div> */}
             </div>
             <div className="border rounded-md">
                 <Table>

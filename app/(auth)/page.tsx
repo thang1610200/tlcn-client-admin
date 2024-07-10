@@ -29,7 +29,10 @@ type LoginFormValues = z.infer<typeof formSchema>;
 
 export default function LoginAdminPage() {
     const [isLoading, setIsLoading] = useState(false);
+    const session = useSession();
     const router = useRouter();
+
+   // console.log(session.status);
 
     const form = useForm<LoginFormValues>({
         resolver: zodResolver(formSchema),
@@ -61,13 +64,17 @@ export default function LoginAdminPage() {
             });
     }
 
+    if(session.status === 'authenticated') {
+        return router.push("/user");
+    }
+
     return (
         <>
             <div className="relative">
                 <div className="container relative items-center justify-center h-screen lg:max-w-none lg:px-0">
                     <div className="relative h-full text-white lg:p-8 bg-gradient-to-b from-slate-500 to-gray-200 dark:border-r lg:flex">
                         <h2 className="z-10 text-4xl font-bold cursor-pointer">
-                            Udemy
+                            LEARNER
                         </h2>
                         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px] -translate-x-16">
                             <div className="flex flex-col space-y-2 text-center">

@@ -58,21 +58,10 @@ export const Navbar = () => {
                             </div>
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
-                            <Link href="/profile" legacyBehavior passHref>
-                                <DropdownMenuItem>
-                                    <NavigationMenuLink>
-                                        Trang cá nhân
-                                    </NavigationMenuLink>
-                                </DropdownMenuItem>
-                            </Link>
-                            <DropdownMenuItem>Chỉnh sửa</DropdownMenuItem>
-                        </DropdownMenuGroup>
-                        <DropdownMenuSeparator />
                         <DropdownMenuItem
                             className="hover:bg-inherit"
                             onClick={() => {
-                                signOut({ callbackUrl: '/login' });
+                                signOut({ callbackUrl: '/' });
                             }}
                         >
                             Đăng xuất

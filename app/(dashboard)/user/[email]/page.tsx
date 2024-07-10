@@ -19,12 +19,16 @@ const UserDetail = ({ params }: { params: { email: string } }) => {
         params.email
     );
 
-    if (isLoading) {
+    if (isLoading || session.status === 'loading') {
         return <LoadingModal />;
     }
 
     if (error) {
         return router.back();
+    }
+
+    if(session.status === 'unauthenticated') {
+        return router.push("/");
     }
 
     return (
